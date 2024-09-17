@@ -1,20 +1,18 @@
 import org.junit.jupiter.api.Test;
 import org.talento.tech.Shape;
 
-import java.net.URISyntaxException;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PerimeterCalculatorTest {
 
-    public Shape loadShape() throws URISyntaxException {
+    public Shape loadShape() {
         Shape shape = new Shape();
         shape.readPoints("square.txt");
         return shape;
     }
 
     @Test
-    void calculatePerimeterTest() throws URISyntaxException {
+    void calculatePerimeterTest() {
         Shape shape = loadShape();
         PerimeterCalculator perimeterCalculator = new PerimeterCalculator();
         double perimeter = perimeterCalculator.calculatePerimeter(shape);
@@ -22,7 +20,7 @@ public class PerimeterCalculatorTest {
     }
 
     @Test
-    void totalPointsTest() throws URISyntaxException {
+    void totalPointsTest() {
         Shape shape = loadShape();
         PerimeterCalculator perimeterCalculator = new PerimeterCalculator();
         int totalPoints = perimeterCalculator.getTotalPoints(shape);

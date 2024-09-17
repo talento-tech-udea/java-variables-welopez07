@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -16,13 +15,13 @@ public class Shape {
 
     public Shape(){}
 
-    public void readPoints(String file) throws URISyntaxException {
+    public void readPoints(String file) {
         ClassLoader classLoader = getClass().getClassLoader();
 
         URL resourceURL = classLoader.getResource(file);
 
         if (resourceURL != null) {
-            Path resourcePath = Paths.get(resourceURL.toURI());
+            Path resourcePath = Paths.get(resourceURL.getPath());
 
             BufferedReader reader;
             try {
